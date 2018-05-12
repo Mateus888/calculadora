@@ -1,0 +1,138 @@
+<html>
+<head>
+
+<title>Mateus</title>
+
+<script type="text/javascript">
+var operacao = "";
+var valor1 = 0;
+var valor2 = 0;
+
+function limpavar(){
+        operacao = "";
+        valor1 = 0;
+        valor2 = 0;
+}
+		
+function atribui(elemento){
+        if(operacao== ""){
+                valor1 = elemento.value;
+                var numeroreferencia = document.getElementById("numero");
+				numeroreferencia.value = valor1;
+			
+			}else{
+			    valor2 = elemento.value;
+				var numeroreferencia = document.getElementById("numero");
+				var conteudo = numeroreferencia.value;
+				numeroreferencia.value = conteudo+""+valor2;
+			}	
+}
+
+function mostra(){
+        alert("operacao="+operacao+" - valor1="+valor1+" - valor2="+valor2);
+}
+function somar(){
+        operacao = "SOMAR";
+        var numeroreferencia = document.getElementById("numero");
+        numeroreferencia.value = numeroreferencia.value+"+";
+}
+function subtrair(){
+        operacao = "SUBTRAIR";
+        var numeroreferencia = document.getElementById("numero");
+        numeroreferencia.value = numeroreferencia.value+"-";
+}		
+function multiplicar(){
+        operacao = "MULTIPLICAR";
+        var numeroreferencia = document.getElementById("numero");
+        numeroreferencia.value = numeroreferencia.value+"*";
+
+}
+function dividir(){
+        operacao = "DIVIDIR"
+        var numeroreferencia = document.getElementById("numero");
+        numeroreferencia.value = numeroreferencia.value+"/";
+}						
+
+function total(){
+         if(operacao== "SOMAR"){
+                var AA1 = parseInt(valor1);
+                var AA2 = parseInt(valor2);
+
+                var numeroreferencia = document.getElementById("numero");
+                numeroreferencia.value = AA1 + AA2;
+		}
+		 if(operacao== "SUBTRAIR"){
+                var AA1 = parseInt(valor1);
+                var AA2 = parseInt(valor2);
+
+                var numeroreferencia = document.getElementById("numero");
+                numeroreferencia.value = AA1 - AA2;
+		}
+		 if(operacao== "MULTIPLICAR"){
+                var AA1 = parseInt(valor1);
+                var AA2 = parseInt(valor2);
+
+                var numeroreferencia = document.getElementById("numero");
+                numeroreferencia.value = AA1 * AA2;
+		}
+         if(operacao== "DIVIDIR"){
+                var AA1 = parseInt(valor1);
+                var AA2 = parseInt(valor2);
+
+                var numeroreferencia = document.getElementById("numero");
+                numeroreferencia.value = AA1 / AA2;
+		}                            
+}	       
+
+</script>
+</head>
+
+<body>
+
+<form>
+
+<table border="1">           
+
+<tr>
+<td>
+<input type="text" name="numero" id="numero">
+<input type="button" value="=" onclick="total();">
+</td>
+</tr>
+<tr>
+<td>
+<input type="reset" value="limpar" onclick="limpavar();">
+<input type="button" value="multiplicar" onclick="multiplicar();">
+<input type="button" value="{}" onclick="mostra();">
+</td>
+</tr>
+<tr>
+<td>
+<input type="button" value="7" onclick="atribui(this);">
+<input type="button" value="8" onclick="atribui(this);">
+<input type="button" value="9" onclick="atribui(this);">
+<input type="button" value="somar" onclick="somar();">
+</td>
+</tr>
+<tr>
+<td>
+<input type="button" value="4" onclick="atribui(this);">
+<input type="button" value="5" onclick="atribui(this);">
+<input type="button" value="6" onclick="atribui(this);">
+<input type="button" value="subtrair" onclick="subtrair();">
+</td>
+</tr>
+<tr>
+<td>
+<input type="button" value="3" onclick="atribui(this);">
+<input type="button" value="2" onclick="atribui(this);">
+<input type="button" value="1" onclick="atribui(this);">
+<input type="button" value="dividir" onclick="dividir();">
+</td>
+</tr>
+
+
+</table>
+</form>
+</body>
+</html>
